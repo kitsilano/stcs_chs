@@ -1,10 +1,10 @@
-Title
+The Right to Vancouverism: Social Reproduction Placemaking in the Revanchist City
 =================================================
 
 UBC Statistics Short Term Consulting Service (STCS)
 --------------------------------------------------------------------------------
 
-Client: Name, Affiliation
+Client: Cheryl-lee Madden
 
 Consultant: Gian Carlo Diluvi, UBC Statistics
 
@@ -13,11 +13,12 @@ Latest version of the report: [Version](link)
 
 ### Executive Summary
 
+todo
 
 
 ### Project objectives
 
-
+todo
 
 ### Directory roadmap
 
