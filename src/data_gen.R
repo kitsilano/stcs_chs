@@ -11,9 +11,6 @@
 
 library(tidyverse)
 library(readr)
-library(ggplot2)
-ggplot2::theme_set(theme_classic())
-
 
 
 ####################
