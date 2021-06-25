@@ -52,7 +52,7 @@ chs %>%
   dplyr::filter(gender == "female") %>% 
   ggplot() +
   geom_boxplot(aes(x = forced_move, y = income, weight = weight)) +
-  labs(x = "Forced move?",
+  labs(x = "Forced move? (Only females)",
        y = "Income (CAD / year)") +
   scale_y_continuous(breaks = 250000*0:5,
                      labels = scales::dollar) +
