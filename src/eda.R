@@ -31,6 +31,7 @@ chs <- readr::read_csv('../data/chs_clean.csv')
 # data viz      ###
 ####################
 ####################
+fontsize <- 16
 
 
 # forced moves by gender
@@ -41,7 +42,8 @@ chs %>%
   labs(x = "Gender",
        y = "",
        fill = "Forced move?") +
-  scale_y_continuous(labels = scales::percent)
+  scale_y_continuous(labels = scales::percent) +
+  theme(text = element_text(size = fontsize))
 
 
 
@@ -53,4 +55,5 @@ chs %>%
   labs(x = "Forced move?",
        y = "Income (CAD / year)") +
   scale_y_continuous(breaks = 250000*0:5,
-                     labels = scales::dollar)
+                     labels = scales::dollar) +
+  theme(text = element_text(size = fontsize))
