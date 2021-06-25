@@ -75,17 +75,64 @@ Q3: can we deep dive into vancouver?
 
 \section{Statistical Considerations of the 2018 CHS PUMF} \label{sec:stats}
 
-mention that pumf cannot be used for statistical analyses.
 
-give reasons for this, citing the user's guide.
+In order to protect the privacy of survey respondents (i.e.
+preventing any respondent or household to be identified), data obtained
+in the CHS is modified in various ways. \cite[Section~6]{chsguide} goes
+into detail about the safeguards used by Statistics Canada. These include
+decreasing the level of geographic detail; grouping answers into
+categories in questions that contain many answers; adding random noise to
+some quantitative variables; and rounding very small or large quantitative
+values, which normally correspond to extreme (i.e. rare) households.
+\\
 
-mention that the whole file can be used for this, but access is not public and has to be requested.
 
-also, the pumf is aggregated at the vancouver/other cities/rural level, i.e. there are no neighborhoods in vancouver.
+The modified data, called the \textit{public use microdata file} (PUMF),
+is then made public. Naturally, analyses based on the PUMF will differ from
+those carried out using the full master file of Statistics Canada due
+to the data modification process used to decrease disclosure risk.
+\cite[Section~7]{chsguide} explains in detail all the limitations of analyses
+based on the PUMF. Succinctly, however, the PUMF should not be used to carry out
+statistical analyses. Rather, it should be used to conduct exploratory data
+analyses that might indicate which models are appropriate and possibly
+to obtain preliminary estimates of variables of interest.
+\\
 
-however, the whole file is more granular, so that could be used.
+Related to the first statistical question, the PUMF cannot be reliably used
+to measure variability, and it does not include bootstrap weights.
+Hence, practically any statistical test would produce invalid results.
+This is because, even if point estimates are not necessarily way off
+when compared with the values obtained from Statistics Canada's master file,
+there is no way to reliably measure the quality of each estimate.
+More so, the accuracy of point estimates depends on the number of variables
+that are being cross-tabulated. Again, there is no objective and reliable way
+to measure this accuracy.
+\\
 
-mention possible models that can be used and give references.
+Once preliminary results have been obtained and an appropriate model
+(or family of models) selected, the PUMF user guide \cite{chsguide} recommends
+requesting access to the CHS master files. Statistical analyses based on
+the full data files will be valid and, furthermore, can be made
+to a greater level of detail (e.g. geographically).
+\\
+
+As for the second statistical question, the PUMF contains the gender
+of the reference person, i.e. the one answering the survey.
+This means that accounting for gender using the PUMF would be difficult
+as there is no indication of the relationship between the reference person
+and the main provider of each household. It is possible that the master file
+does contain information about each member of the household, including gender,
+although the PUMF guide is not very clear about this.
+\\
+
+In terms of the third statistical question of, the PUMF only
+contains geographic information at the census metropolitan area (CMA),
+which for British Columbia (B.C.) corresponds to three categories:
+Vancouver, other large cities, and the rest of B.C. The confidential
+master file of Statistics Canada, however, does contain more detailed
+information that would allow a more granular analysis.
+
+
 
 
 \section{Exploratory Data Analysis} \label{sec:eda}
@@ -105,10 +152,10 @@ show plots, explain.
 
 
 
-%\clearpage
+\clearpage
 %\printbibliography
-%\bibliographystyle{abbrvnat}
-%\bibliography{ref}
+\bibliographystyle{abbrvnat}
+\bibliography{ref}
 
 
 \end{document}
