@@ -9,7 +9,7 @@ Client: Cheryl-lee Madden
 Consultant: Gian Carlo Diluvi, UBC Statistics
 
 
-Latest version of the report: [Version](link)
+Latest version of the report: [Incomplete draft](https://github.com/GiankDiluvi/stcs_chs/blob/master/doc/stcs_cheryl-lee-madden.pdf)
 
 ### Executive Summary
 
