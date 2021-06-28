@@ -20,6 +20,7 @@
 
 \usepackage{multirow} % for table
 \usepackage[table]{xcolor} % alternating row colors in tables
+\usepackage{placeins}
 \renewcommand{\abstractname}{Executive Summary} % change title of abstract
 
 % set fancy style for margins %%%%%%
@@ -132,7 +133,7 @@ with a greater level of detail (e.g. geographically).
 \\
 
 As for the second statistical question, the PUMF contains the gender
-of the reference person, i.e. the one answering the survey.
+of the reference person, i.e. the person answering the survey.
 This means that accounting for gender using the PUMF would be difficult
 as there is no indication of the relationship between the reference person
 and the main provider of each household. It is possible that the master file
@@ -192,8 +193,9 @@ Figure \ref{fig:fm_gender} shows that slightly more men were forced to move
 out of their house, although it is not possible to assess whether the
 difference is significant in light of the previous section.
 Figure \ref{fig:income_gender} shows that women that were \textit{not}
-forced to move tend to have a higher income. Indeed, all the outlier points
-with really high incomes correspond to women who were not forced to move.
+forced to move tend to have a higher income than those who were.
+Indeed, all the outlier points with really high incomes correspond to
+women who were not forced to move.
 On the other hand, the median income of women who were forced to move
 is smaller, although again it is not possible to test whether this
 difference is statistically significant (e.g. via a $t$-test or a
@@ -243,7 +245,7 @@ can be tested via an Analysis of Variance (ANOVA) or a non-parametric
 version thereof.
 (See \cite[Ch.~14]{agresti} for a more detailed explanation of ANOVA.)
 
-
+\FloatBarrier
 
 \section{Conclusion} \label{sec:conclusion}
 
@@ -273,7 +275,7 @@ that there is no data available at the neighborhood level within Vancouver in
 the PUMF.
 \\
 
-Once the 2021 CHS is made avaiable, it can be used to also account for
+Once the 2021 CHS is made available, it can be used to also account for
 the impact of the COVID-19 pandemic. However, given that the 2018 CHS
 was published in 2021, it could very well be that the 2021 CHS is
 published in 2024. Until then, it is not possible to incorporate information
