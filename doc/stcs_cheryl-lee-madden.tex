@@ -158,11 +158,51 @@ once it is made public, with the same considerations as mentioned above.
 
 \section{Exploratory Data Analysis} \label{sec:eda}
 
-here we replicate some of the plots in the blog post but separating by gender and only for bc.
+In this section, we will address the second and third statistical
+questions, i.e. the landscape of forced moves for low-income women
+in Vancouver.
+\\
 
-mention how gender is calculated in survey and limitations.
+As we discussed in the previous section, the PUMF contains the gender
+of the reference person. We will proceed assuming that the reference
+person corresponds to the primary provider of each household.
+Note, however, that this assumption might very well not hold, but it
+allows us to propose visualizations to understand the relationship
+between gender and forced moves. We suggest repeating these figures
+with the full master file of the 2018 CHS.
+\\
 
-show plots, explain.
+
+Figure \ref{fig:fm_gender} shows that slightly more men were forced to move
+out of their house, although it is not possible to assess whether the
+difference is significant in light of the previous section.
+Figure \ref{fig:income_gender} shows that women that were \textit{not}
+forced to move tend to have a higher income. Indeed, all the outlier points
+with really high incomes correspond to women who were not forced to move.
+On the other hand, the median income of women who were forced to move
+is smaller, although again it is not possible to test whether this
+difference is statistically significant (e.g. via a $t$-test or a
+permutation test).
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{fig/fm_gender.pdf}
+  \caption{Percentage of people in B.C. that were forcefully moved
+  from their house by gender.}
+  \label{fig:fm_gender}
+\end{figure}
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{fig/income_gender.pdf}
+  \caption{Distribution of income of women in B.C., divided by
+  whether they were forced to move from their house.}
+  \label{fig:income_gender}
+\end{figure}
+
 
 
 

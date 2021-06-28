@@ -44,7 +44,7 @@ chs %>%
        fill = "Forced move?") +
   scale_y_continuous(labels = scales::percent) +
   theme(text = element_text(size = fontsize))
-
+ggsave("../doc/fig/fm_gender.pdf")
 
 
 # forced moves within females by income
@@ -57,3 +57,4 @@ chs %>%
   scale_y_continuous(breaks = 250000*0:5,
                      labels = scales::dollar) +
   theme(text = element_text(size = fontsize))
+ggsave("../doc/fig/income_gender.pdf")
