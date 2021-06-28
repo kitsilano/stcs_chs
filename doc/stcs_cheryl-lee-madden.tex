@@ -57,17 +57,32 @@ June 2021}
 
 \section{Introduction}
 
-reference blog post and talk about the 2018 chs.
+Statistics Canada just published the results of the 2018 Canadian
+Household Survey \cite{chs2018}. \cite{blog} used the publicly-available
+data to analyze mobility in Canada, with an emphasis on forced moves
+and tenure precarity.
+\\
 
-statistical questions:
+A new research project aims at expanding the analysis \cite{blog}
+to account for low-income women as well as different neighborhoods within
+Vancouver. Once the 2021 CHS data become available, the project also aims
+to understand the impact of the COVID-19 pandemic on low-income women
+tenure precarity.
+The project poses three statistical questions:
+\benum
+  \item whether the publicly-available data from the 2018 CHS is appropriate
+  for statistical inference;
+  \item whether the statistical analyses in \cite{blog} can also be applied
+  to study the impact of gender and income in forced moves in Vancouver;
+  \item whether the analyses of \cite{blog}, which are done at the city
+  level, can be expanded to include more geographic granularity within Vancouver.
+\eenum
 
-Q1: how sound are statistical analyses in blog post?
-
-Q2: can we expand that analysis to account for low-income women?
-
-Q3: can we deep dive into vancouver?
-
-
+In Section \ref{sec:stats}, we discuss the limitations of using the
+publicly-available data of the 2018 CHS and how these apply to each
+of the three statistical questions. In Section \ref{sec:eda}, we showcase
+potential visualizations that can be used to address the statistical
+questions. Section \ref{sec:conclusion} concludes the report.
 
 
 
@@ -77,7 +92,7 @@ Q3: can we deep dive into vancouver?
 
 
 In order to protect the privacy of survey respondents (i.e.
-preventing any respondent or household to be identified), data obtained
+preventing any respondent or household from being identified), data obtained
 in the CHS is modified in various ways. \cite[Section~6]{chsguide} goes
 into detail about the safeguards used by Statistics Canada. These include
 decreasing the level of geographic detail; grouping answers into
@@ -104,9 +119,9 @@ Hence, practically any statistical test would produce invalid results.
 This is because, even if point estimates are not necessarily way off
 when compared with the values obtained from Statistics Canada's master file,
 there is no way to reliably measure the quality of each estimate.
-More so, the accuracy of point estimates depends on the number of variables
-that are being cross-tabulated. Again, there is no objective and reliable way
-to measure this accuracy.
+Furthermore, the accuracy of point estimates is inversely proportional to
+the number of variables that are being cross-tabulated.
+Again, however, there is no objective and reliable way to measure this accuracy.
 \\
 
 Once preliminary results have been obtained and an appropriate model
@@ -182,7 +197,7 @@ with really high incomes correspond to women who were not forced to move.
 On the other hand, the median income of women who were forced to move
 is smaller, although again it is not possible to test whether this
 difference is statistically significant (e.g. via a $t$-test or a
-permutation test).
+permutation test; see \cite[Ch.~9.3]{agresti} for a more detailed explanation).
 
 
 \begin{figure}
@@ -205,12 +220,64 @@ permutation test).
 
 
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{fig/income_location.pdf}
+  \caption{Distribution of income of women in B.C. who were forced
+  to move, divided by regions within B.C.}
+  \label{fig:income_location}
+\end{figure}
+
+
+
+Finally, Figure \ref{fig:income_location} shows the distribution of income
+for all women in B.C. who were forced to move. All three distributions seem
+similar, although the non-CMA zone has a slightly smaller range of incomes.
+This is likely due to cities being more expensive (which translates to
+generally higher-paying jobs). This is the finest level of detail included
+in the PUMF, so it is not possible to drill down into Vancouver. As mentioned
+before, the master file of Statistics Canada contains more granular information
+that would allow for such an analysis to be carried out---including whether
+differences between e.g. neighborhoods are statistically significant, which
+can be tested via an Analysis of Variance (ANOVA) or a non-parametric
+version thereof.
+(See \cite[Ch.~14]{agresti} for a more detailed explanation of ANOVA.)
+
 
 
 \section{Conclusion} \label{sec:conclusion}
 
 
+In this report, we discussed using the 2018 Canadian Household Survey
+to study precarious tenure conditions in Canada. Specific emphasis
+was given to adapting the analysis of \cite{blog} to low-income women
+in Vancouver.
+\\
 
+First, we discussed the limitations of using the 2018 CHS PUMF.
+Before being made public, the master file with the full data
+is modified by Statistics Canada to prevent specificic households
+from being identified.
+This, combined with the fact that bootstrap weights are not made
+available, prevents using the PUMF for inferential statistics.
+Indeed, the PUMF user guide recommends only using the public data
+for exploratory analyses and preliminary results, cross-tabulating
+as little as possible.
+\\
+
+We also showcased some specific visual analyses that address the main
+statistical questions, and that adapt \cite{blog} to low-income women
+in B.C. Some limitations regarding the gender variable contained in the
+PUMF were discussed, as were the geographic granularity limitations---namely
+that there is no data available at the neighborhood level within Vancouver in
+the PUMF.
+\\
+
+Once the 2021 CHS is made avaiable, it can be used to also account for
+the impact of the COVID-19 pandemic. However, given that the 2018 CHS
+was published in 2021, it could very well be that the 2021 CHS is
+published in 2024. Until then, it is not possible to incorporate information
+related to the pandemic into analyses of tenure precarity in Canada.
 
 
 \clearpage
