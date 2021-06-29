@@ -58,3 +58,17 @@ chs %>%
                      labels = scales::dollar) +
   theme(text = element_text(size = fontsize))
 ggsave("../doc/fig/income_gender.pdf")
+
+
+
+# forced moves within females by income
+chs %>% 
+  dplyr::filter(gender == "female",
+                forced_move == "yes") %>% 
+  ggplot() +
+  geom_boxplot(aes(x = region, y = income, weight = weight)) +
+  labs(x = "Region within B.C.",
+       y = "Income (CAD / year)") +
+  scale_y_continuous(labels = scales::dollar) +
+  theme(text = element_text(size = fontsize))
+ggsave("../doc/fig/income_location.pdf")
